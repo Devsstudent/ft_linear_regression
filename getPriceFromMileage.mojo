@@ -3,10 +3,10 @@ from python import Python
 fn main():
 	var mileageValue = 0
 	try :
-		let py_sys = Python.import_module('sys')
+		var py_sys = Python.import_module('sys')
 		var mileageValue = Python.evaluate("int(input('Enter a mielage: '))").to_float64()
 		while mileageValue < 0:
-			let str_err: Error = "Please enter a value greater than 0\n"
+			var str_err: Error = "Please enter a value greater than 0\n"
 			mileageValue = Python.evaluate("int(input('Enter a mielage: '))").to_float64()
 	except:
 		return 
@@ -25,7 +25,7 @@ fn main():
 	except:
 		return
 
-	let theta0 = 0
-	let theta1 = 0
-	let estimatePrice = theta0 + (theta1 * mileageValue)
+	var theta0 = 0
+	var theta1 = 0
+	var estimatePrice = theta0 + (theta1 * mileageValue)
 	print(estimatePrice)
