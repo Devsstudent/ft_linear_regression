@@ -21,7 +21,7 @@ import (
 //La somme de x par y
 
 func main() {
-	file, err := os.Open("./data2.csv");
+	file, err := os.Open("./data.csv");
 	if (err != nil) {
 		log.Fatal(err);
 	}
