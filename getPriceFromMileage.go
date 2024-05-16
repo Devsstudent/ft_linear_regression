@@ -40,10 +40,8 @@ func main() {
 	if (err != nil) {
 		log.Fatal("error reading input");
 	}
-	fmt.Println(theta0, theta1, input);
 	var mileage float64;
 	mileage, err = strconv.ParseFloat(input, 10);
-	fmt.Println(theta0 + (theta1 * mileage));
-	//var a = theta0 + theta1;
+	fmt.Println("Price estimated: ", theta0 + (theta1 * mileage));
 	return ;
 }

@@ -26,7 +26,6 @@ func main() {
 		log.Fatal(err);
 	}
 	defer file.Close()
-//	var tetha0, tetha1 float64 = 0, 0;
 	scanner := bufio.NewScanner(file);
 	var Sxy, Sx2, Sx, Sy float64;
 	var n = 0;
@@ -49,14 +48,12 @@ func main() {
 		Sx += km;
 		Sy += price;
 		n++;
-		fmt.Println(km, price, "line: ", line);
 	}
 	if err := scanner.Err(); err != nil {
 		log.Fatal(err);
 	}
 	var b = (Sxy - (Sx * Sy) / float64(n)) / (Sx2 - (Sx * Sx) / float64(n));
 	var a = Sy / float64(n) - b * Sx / float64(n);
-	fmt.Println(Sx, Sy, Sxy, Sx2, "a", a, "b", b);
 
 	err = os.WriteFile("./tetaInfo", []byte(fmt.Sprintf("%f", a) + "," + fmt.Sprintf("%f", b)), 0666);
 	if err != nil {
