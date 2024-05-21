@@ -40,6 +40,6 @@ func main() {
 	}
 	var mileage float64;
 	mileage, err = strconv.ParseFloat(input, 10);
-	fmt.Println("Price estimated: ", theta0 + (theta1 * mileage));
+	fmt.Println("Price estimated: ", fmt.Sprintf("%.2f", theta0 + (theta1 * mileage)));
 	return ;
 }
